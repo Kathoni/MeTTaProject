@@ -6,3 +6,12 @@
 !(let $x 3 (* $x 4)) ; yields 12
 !(let ($x $y) (1 2) (+ $x $y))
 ; yields 3, $x is unified with 1, $y with 2
+;; let* example
+!(let* (($x 2)
+  ($y (* $x 3)))
+  (+ $x $y))
+; yields 8, $x is unified with 2, $y is unified with (* $x 3) = 6
+!(let* ((($a $b) (1 2))
+  ($sum (+ $a $b)))
+  $sum)
+; yields 3, $a is 1, $b is 2, $sum is 3
