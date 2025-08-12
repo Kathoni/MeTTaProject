@@ -11,6 +11,8 @@
 (Kate isParentOf Tom)
 ;;To avoid redundancy e.g by Calling Sylvia and Tom siblings we can use the following:
 ;;$x is $y's siblling if $c isParentOf $x and $c isParentOf $y
+(= (isParent $x $y)
+      (match &self ($x isParentOf $y) True))
 (= (isParentOf $x $y) 
       (match &self ($c isParentOf $x) (match &self ($c isParentOf $y) True)))
 
@@ -22,6 +24,7 @@
 !(isSiblling Sylvia Tatiana) ; yields False
 !(isParentOf Sylvia Tom) ; yields True
 !(isParentOf Tom Sylvia) ; yields False
+!(isParent Kate Tom) ; yields False
 
 ;; isSiblling is a function that checks if two individuals are siblings based on their parentage.
 ;; match &self is used to find a common parent ($c) of both individuals ($x and $y).
