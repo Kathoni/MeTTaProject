@@ -38,3 +38,8 @@
 !((py-atom math.log) 10) ; yields 2.302585092994046
 !((py-atom math.exp) 2) ; yields 7.3890560989306495
 !((py-atom math.pow) 2 3) ;
+!((py-atom math.factorial) 5) ; yields 120
+!((py-atom math.gcd) 48 18) ; yields 6
+!((py-atom math.lcm) 4 6) ; yields 12
+!((py-atom random.randint) 0 10) ; yields a random integer between 0 and 10
+!((py-atom random.choice) (1 2 3 4 5)) ; yields a random choice from the list
