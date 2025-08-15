@@ -23,3 +23,18 @@
  (= (bin) 0)
 (= (bin) 1)
 !(collapse-bind (bin))  ; yields two branches: (0 {}) and (1 {})
+!(123)
+!(- 123 456) ; yields -333
+
+;; py integration tutorial
+; !(py (import math))
+!((py-atom math.sqrt )16) ; yields 4.0
+!((py-atom math.floor) 3.54)
+!((py-atom math.ceil) 3.54) ; yields 4
+!(py-atom math.pi) ; yields 3.141592653589793
+!((py-atom math.sin) 0) ; yields 0.0
+!((py-atom math.cos) 0) ; yields 1.0
+!((py-atom math.tan) 0) ; yields 0.0
+!((py-atom math.log) 10) ; yields 2.302585092994046
+!((py-atom math.exp) 2) ; yields 7.3890560989306495
+!((py-atom math.pow) 2 3) ;
